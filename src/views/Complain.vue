@@ -4,7 +4,7 @@
     <v-layout wrap >
     <h2 class="purple--text">Complaint Form</h2>
          <v-flex xs12 md12>
-            <v-card flat class="white "  >
+            <v-card  class="white "  >
               <v-container fluid >
               <!-- <v-flex xs12 md6>
                   <v-text-field v-model="district"   label="District code" required ></v-text-field>

@@ -54,7 +54,7 @@
        </v-tooltip>
 
      </v-layout>
-     <v-card flat class="white"  v-for="project in projects" :key="project.complaints_refn0">
+     <v-card  class="white"  v-for="project in projects" :key="project.complaints_refn0">
        <v-layout row wrap :class="`pa-3 project ${project.status}`">
          <v-flex xs12 md4>
            <div class="caption grey--text">Complaint Category</div>
