@@ -1,7 +1,13 @@
 <template>
     <nav>
        <v-toolbar style=" background-color: #5e0c1d;" app fixed>
-           <v-toolbar-title class="purple--text" >eCMS</v-toolbar-title>
+           <v-avatar>
+                <img
+                    src="@/assets/img/com.jpg"
+                    alt="John"
+                >
+                </v-avatar>
+           <v-toolbar-title style="color:#faee02;" >eCMS</v-toolbar-title>
            <p></p>
            <p></p>
             <v-toolbar-items class="hidden-sm-and-down" >
@@ -24,13 +30,13 @@
                     </v-list>
                 </v-menu>
                 <router-link v-ripple  to="/dashboard">
-					<v-icon class="mx-2" color>mdi-home</v-icon><br>
+					<v-icon class="mx-2" color="white">mdi-home</v-icon><br>
 				</router-link>
                 <v-menu bottom left content-class offset-y transition="slide-y-transition">
 					<router-link v-ripple slot="activator"  to="/projects">
-						<v-badge class="#E65100" overlap>
+						<v-badge color="#f73b3b" overlap>
 					        <template slot="badge">{{projects.length}}</template>
-					            <v-icon class="mx-2" color>mdi-bell</v-icon>
+					            <v-icon class="mx-2" color="white">mdi-bell</v-icon>
 				        </v-badge>
 					</router-link>
 					<v-card>
@@ -42,7 +48,7 @@
 					</v-card>
 				</v-menu>
                      <v-btn flat class="white--text" @click="logout()">
-                    <span>SignOut</span>
+                    <span style="color:#faee02;">SignOut</span>
                     <v-icon>exit_to_app</v-icon>
                     </v-btn> 
         </v-toolbar>
