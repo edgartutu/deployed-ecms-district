@@ -47,7 +47,6 @@
                      :rules="[() => !!name || 'This field is required']"
                     type="text"
                   ></v-text-field>
-
                   <v-text-field
                     label="Email"
                     v-model="email"
@@ -72,14 +71,19 @@
                      :rules="[() => !!post || 'This field is required']"
                     type="text"
                   ></v-text-field>
-                  <v-text-field
-                    label="District"
+                   <v-col cols="12">
+                  <v-autocomplete
                     v-model="district"
                     name="district"
+                    :items="itemn"
+                    outlined
                     prepend-icon="email"
-                     :rules="[() => !!district || 'This field is required']"
-                    type="text"
-                  ></v-text-field>
+                    dense
+                    label="District"
+                    single-line
+                    :rules="[() => !!district || 'This field is required']"
+                  ></v-autocomplete>
+                </v-col>
                   <v-text-field
                     id="password"
                     label="Password"
@@ -128,9 +132,129 @@ import axios from 'axios'
         password:'',
         confirm:'',
         district:'',
+        conf:'Registered',
+         itemn:[
+        'Buikwe',
+'Bukomansimbi',
+'Butambala',
+'Buvuma',
+'Gomba',
+'Kalangala',
+'Kalungu',
+'Kampala',
+'Kayunga',
+'Kiboga',
+'Kyankwanzi',
+'Luweero',
+'Lwengo',
+'Lyantonde',
+'Masaka',
+'Mityana',
+'Mpigi',
+'Mubende',
+'Mukono',
+'Nakaseke',
+'Nakasongola',
+'Rakai',
+'Sembabule',
+'Wakiso',
+'Amuria',
+'Budaka',
+'Bududa',
+'Bugiri',
+'Bukedea',
+'Bukwa',
+'Bulambuli',
+'Busia',
+'Butaleja',
+'Buyende',
+'Iganga',
+'Jinja',
+'Kaberamaido',
+'Kaliro',
+'Kamuli',
+'Kapchorwa',
+'Katakwi',
+'Kibuku',
+'Kumi',
+'Kween',
+'Luuka',
+'Manafwa',
+'Mayuge',
+'Mbale',
+'Namayingo',
+'Namutumba',
+'Ngora',
+'Pallisa',
+'Serere',
+'Sironko',
+'Soroti',
+'Tororo',
+'Abim',
+'Adjumani',
+'Agago',
+'Alebtong',
+'Amolatar',
+'Amudat',
+'Amuru',
+'Apac',
+'Arua',
+'Dokolo',
+'Gulu',
+'Kaabong',
+'Kitgum',
+'Koboko',
+'Kole',
+'Kotido',
+'Lamwo',
+'Lira',
+'Maracha',
+'Moroto',
+'Moyo',
+'Nakapiripirit',
+'Napak',
+'Nebbi',
+'Nwoya',
+'Otuke',
+'Oyam',
+'Pader',
+'Yumbe',
+'Zombo',
+'Buhweju',
+'Buliisa',
+'Bundibugyo',
+'Bushenyi',
+'Hoima',
+'Ibanda',
+'Isingiro',
+'Kabale',
+'Kabarole',
+'Kamwenge',
+'Kanungu',
+'Kasese',
+'Kibaale',
+'Kiruhura',
+'Kiryandongo',
+'Kisoro',
+'Kyegegwa',
+'Kyenjojo',
+'Masindi',
+'Mbarara',
+'Mitooma',
+'Ntoroko',
+'Ntungamo',
+'Rubirizi',
+'Rukungiri',
+'Sheema',
+
+      ]
       }
       
     },
+    created () {
+  
+    window.addEventListener('load', this.greet)
+  },
     methods:{
       submit(){
         //console.log('hello')
@@ -139,7 +263,15 @@ import axios from 'axios'
           }).then(response=>{
                 window.location.reload()
             })
+      },
+       greet(event){
+        alert('Your ' + this.conf + '!')
+
+      //   if (event) {
+      //   alert(event.target.tagName)
+      // }
       }
+
     }
   }
 </script>

@@ -44,7 +44,7 @@
                     name="login"
                     v-model="username"
                     prepend-icon="person"
-                     :rules="[() => !!password || 'This field is required']"
+                     :rules="[() => !!username || 'This field is required']"
                     type="text"
                   ></v-text-field>
 
