@@ -19,8 +19,8 @@
                 <v-toolbar-title class="white--text">Login form</v-toolbar-title>
                 <div class="flex-grow-1"></div>
                 <v-spacer></v-spacer>
-                <v-tooltip right>
-                  <template v-slot:activator="{ on }">
+                <!-- <v-tooltip right>
+                  <template v-slot:activator="{ on }"> -->
                       <router-link to="/register">
                             <v-btn
                             icon
@@ -33,9 +33,9 @@
                             </v-btn>
                       </router-link>
                     
-                  </template>
+                  <!-- </template>
                   <span class="white--text" >Become a member</span>
-                </v-tooltip>
+                </v-tooltip> -->
               </v-toolbar>
               <v-card-text>
                 <v-form>
