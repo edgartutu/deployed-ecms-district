@@ -147,12 +147,12 @@
         <v-container>
           <v-layout>
             <v-flex xs12 md12>
-                    <v-card  class="mb-12"  flat >
+                    <v-card id="print"   class="mb-12"  flat >
                       <v-avatar size="100">
                         <img
                             src="@/assets/img/com.jpg"
                             alt="John"
-                          id="print"  
+                          
                         >
                         </v-avatar>
                         <h3>Orgainsation Name</h3>
