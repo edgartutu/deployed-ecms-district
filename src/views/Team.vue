@@ -60,24 +60,44 @@
                             >
                             Complaint Details
                           </v-card-title>
-                                  <v-card-text class="px-16">
-                                      <h4 class="font-weight-bold">Complaint Ref</h4>
-                                      <p>{{props.item.complaints_refn0}}</p>
-                                      <h4 class="font-weight-bold">Complaint Category</h4>
-                                      <p>{{props.item.nature_complaint}}</p>
+                                <v-btn class="right teal"  @click.native="print">Print</v-btn>
+                                   <v-card-text id="print" class="px-16">
+                                     <v-avatar size="100">
+                                      <img
+                                          src="@/assets/img/com.jpg"
+                                          alt="John"
+                                          
+                                      >
+                                      </v-avatar>
+                                      
+                                      <h3>Orgainsation Name</h3>
+                                      <h3 style="color: #004080;" class="font-weight-bold">Certificate Of Resolution</h3>
+                                      <h4 class="red--text" style="font-weight:bold;">{{props.item.complaints_refn0}}</h4>
+                                      <!-- <h4 class="font-weight-bold">Complaint Ref</h4>
+                                      <p>{{props.item.complaints_refn0}}</p> -->
+                                      <!-- <h4 class="font-weight-bold">Complaint Category</h4>
+                                      <p>{{props.item.nature_complaint}}</p> -->
                                       <h4 class="font-weight-bold">Complainant</h4>
                                       <p>{{props.item.complaint}}</p>
-                                      <h4 class="font-weight-bold">Location</h4>
-                                      <p>{{props.item.district}}</p>
-                                      <h4 class="font-weight-bold">Date Recieved</h4>
-                                      <p>{{props.item.date}}</p>
-                                        <h4 class="font-weight-bold">Date Resolved</h4>
-                                      <p>{{props.item.date_submit}}</p> 
-                                       <h4 class="font-weight-bold">Level One Resolution</h4>
-                                      <p>{{props.item.district_resolutions}}</p> 
-                                      <h4 class="font-weight-bold">HeadQuater Resolution Details</h4>
+                                      <!-- <h4 class="font-weight-bold">Location</h4>
+                                      <p>{{props.item.district}}</p> -->
+                                      <h4 class="font-weight-bold">District Resolution</h4>
+                                      <p>{{props.item.district_resolutions}}</p>
+                                       <h4 class="font-weight-bold">HeadQuater Resolution</h4>
                                       <p>{{props.item.headresolution}}</p>
-                                  </v-card-text>     
+                                      <div class="left font-weight-bold">Date Recieved :</div>
+                                      <div class="left">{{props.item.date}}</div><br>
+                                        <div class="left font-weight-bold">Date Resolved :</div>
+                                      <div class="left">{{props.item.date_submit}}</div> 
+                                      <div class="right">Signature: ...........................................</div>
+                                      <br>
+                                      <div class="right">Director Technical And Support Services</div><br>
+                                      
+                                     
+                                      
+                                      
+                                      
+                                  </v-card-text> 
                             <v-divider></v-divider>
                             <v-card-actions>
                               <!-- <v-spacer></v-spacer> -->
@@ -151,6 +171,36 @@ import axios from 'axios'
           this.items = response.data
         }
       )
+    },
+     methods:{
+       print(){
+        // Get HTML to print from element
+const prtHtml = document.getElementById('print').innerHTML;
+
+// Get all stylesheets HTML
+let stylesHtml = '';
+for (const node of [...document.querySelectorAll('link[rel="stylesheet"], style')]) {
+  stylesHtml += node.outerHTML;
+}
+
+// Open the print window
+const WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+
+WinPrint.document.write(`<!DOCTYPE html>
+<html>
+  <head>
+    ${stylesHtml}
+  </head>
+  <body>
+    ${prtHtml}
+  </body>
+</html>`);
+
+WinPrint.document.close();
+WinPrint.focus();
+WinPrint.print();
+// WinPrint.close();
+      }
     }
   }
 </script>

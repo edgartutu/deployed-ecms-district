@@ -147,7 +147,27 @@
         <v-container>
           <v-layout>
             <v-flex xs12 md12>
-                    <v-card  class="mb-12"  flat ></v-card>
+                    <v-card  class="mb-12"  flat >
+                      <v-avatar size="100">
+                        <img
+                            src="@/assets/img/com.jpg"
+                            alt="John"
+                          id="print"  
+                        >
+                        </v-avatar>
+                        <h3>Orgainsation Name</h3>
+                        <h3 style="color: #004080;" class="font-weight-bold">Certificate Of Resolution</h3>
+                        <h4 class="red--text" style="font-weight:bold;">{{userData.refnumber}}</h4>
+                        <h4 class="font-weight-bold">Complaint</h4>
+                        <p>{{userData.complaint_detail}}</p>
+                        <h4 class="font-weight-bold" >HeadQuater Resolution :</h4>
+                        <p>{{userData.resolving}}</p>
+                        <div class="left " >ReportDate:  {{userData.date}}  </div><br>
+                        <div class="left">ResolvedDate: {{userData.dt}}</div>
+                        <div class="right">signature: ...........................................</div>
+                        <br>
+                        <div class="right">Director Technical And Support Services</div>
+                    </v-card>
             </v-flex>
           </v-layout>
         </v-container>
@@ -164,6 +184,7 @@
         <v-btn
         class="right"
           color="teal"
+          @click.native="print"
         >
           Print
         </v-btn>
@@ -232,6 +253,39 @@ import unresolve from '../components/DashViews/Unresolved.vue'
             }
         })
           // console.log(this.userData.refnumber)
+      },
+       print(){
+        // Get HTML to print from element
+const prtHtml = document.getElementById('print').innerHTML;
+
+// Get all stylesheets HTML
+let stylesHtml = '';
+for (const node of [...document.querySelectorAll('link[rel="stylesheet"], style')]) {
+  stylesHtml += node.outerHTML;
+}
+
+// Open the print window
+const WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+
+WinPrint.document.write(`<!DOCTYPE html>
+<html>
+  <head>
+    ${stylesHtml}
+  </head>
+  <body>
+  <img
+  src="@/assets/img/com.jpg"
+  alt="John"
+id="print"  
+>
+${prtHtml}
+  </body>
+</html>`);
+
+WinPrint.document.close();
+WinPrint.focus();
+WinPrint.print();
+// WinPrint.close();
       }
     }
     

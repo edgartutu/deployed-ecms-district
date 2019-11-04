@@ -22,7 +22,7 @@ export default {
         hoverBackgroundColor: "red",
         hoverBorderWidth: 10,
         
-        labels: ["Green", "Red", "Blue"],
+        labels: ["x", "x", "x"],
         datasets: [
           {
             label: "Data One",

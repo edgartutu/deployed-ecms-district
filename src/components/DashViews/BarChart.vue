@@ -1,6 +1,6 @@
 <template>
   <div class="small">
-    <bar-chart :chart-data="datacollection" height="400px"></bar-chart>
+    <bar-chart :chart-data="datacollection" height="390px"></bar-chart>
     <!-- <button @click="fillData()">Randomize</button> -->
     
     

@@ -3,7 +3,7 @@
     <navbar/>
     <v-form>
       <v-container fluid>
-        <v-row>
+        <!-- <v-row>
           <v-layout row wrap >
             <v-flex xs10 md3>
               <v-col cols="12" sm="4">
@@ -33,7 +33,7 @@
                   Search
                </v-btn>
           </v-layout>    
-        </v-row>
+        </v-row> -->
       </v-container>
     </v-form>
    <v-container fluid>
@@ -82,9 +82,9 @@
          </v-flex>
          <v-flex xs2 sm4 md1>
            <router-link   :to="{ name: 'Stepperview',
-            params: { userData:{complaint:project.nature_complaint,refnumber:project.complaints_refn0,agentname:project.agent_name,
-            date:project.date,phoneno:project.agent_phone,location:project.district,
-            complaint_detail:project.complaint,levels:project.agent_staff,post:project.agent_staff,picto:project.picture} } }" >
+            params: { userData:{resolving:project.headresolution,dt:project.date_submit,complaint:project.nature_complaint,refnumber:project.complaints_refn0,agentname:project.agent_name,
+            date:project.date,phoneno:project.agent_phone,location:project.district,description:project.comments,time:project.date_submit,
+            complaint_detail:project.complaint,levels:project.classify_complaint,post:project.agent_staff,picto:project.picture} } }" >
 				    <v-btn
                 :color="getColor(project.status)"
                 dark
