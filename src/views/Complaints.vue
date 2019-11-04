@@ -1,9 +1,9 @@
 <template>
 <div class="dashboard">
     <navbar/>
-    <v-form>
+    <!-- <v-form>
       <v-container fluid>
-        <!-- <v-row>
+        <v-row>
           <v-layout row wrap >
             <v-flex xs10 md3>
               <v-col cols="12" sm="4">
@@ -33,9 +33,9 @@
                   Search
                </v-btn>
           </v-layout>    
-        </v-row> -->
+        </v-row>
       </v-container>
-    </v-form>
+    </v-form> -->
    <v-container fluid>
      <v-layout row class="mb-2">
        <v-tooltip top>
