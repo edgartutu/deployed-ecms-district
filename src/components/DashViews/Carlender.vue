@@ -76,8 +76,8 @@ export default{
 .v-chip.Declined{
   background:  tomato;
 }
-.v-chip{
-    background:hotpink;
+.v-chip.Unresolved{
+    background: #5e0c1d;
 }
 
 </style>
