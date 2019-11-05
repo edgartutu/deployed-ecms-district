@@ -1,6 +1,7 @@
 <template>
   <div>
     <navbar/>
+    <v-container fluid>
   <v-layout row wrap column>  
     <v-flex xs12 md12 >
         <export-excel style="float:left;" :data="items">
@@ -36,6 +37,7 @@
             </v-data-table>
       </v-flex>
       </v-layout>
+      </v-container>
   </div>
 </template>
 <script>

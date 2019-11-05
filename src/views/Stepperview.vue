@@ -27,10 +27,10 @@
                         <div class=" green--text">Complainant</div>
                         <p>{{userData.agentname}}</p>
                   </v-flex>
-                  <v-flex xs12 md2>
+                  <!-- <v-flex xs12 md2>
                         <div class=" green--text">Level</div>
                         <p>{{userData.levels}}</p>
-                  </v-flex>
+                  </v-flex> -->
                    <v-flex xs12 md2>
                        <div class=" green--text">Position Held</div>
                          <p>{{userData.post}}</p>

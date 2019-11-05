@@ -1,20 +1,28 @@
 <template>
 <div class="dashboard">
-  <navbar/>
- 
+  
+    <v-container fluid>
+      <navbar/><br>
    <v-layout row wrap justify-space-around>
-     <v-flex xs10 md5>
-       <v-card class="pa-3" outline  max-width="800" height="400px">
+     <v-flex xs10 md6>
+       <v-hover v-slot:default="{ hover }">
+       <v-card :elevation="hover ? 12 : 2" class="pa-3" outline  max-width="820" height="500px">
          <pie/>
        </v-card>
+       </v-hover>
      </v-flex>
-     <v-flex xs10 md5>
-       <v-card class="pa-2" outline max-width="800"  height="400px"> 
-         <div width="1000px"><bar/></div>
-         
+     <v-flex xs10 md6>
+       <v-hover v-slot:default="{ hover }">
+       <v-card :elevation="hover ? 12 : 2" max-height="500px" style="overflow-y: auto" class="pa-3" outline max-width="820"  height="500px"> 
+         <!-- <div width="1000px"><bar/></div> -->
+         <carlender/>
        </v-card>
+       </v-hover>
      </v-flex>
-   </v-layout><br>
+   </v-layout>
+   </v-container>
+   
+   <!-- <br>
    <v-layout row wrap justify-space-around>
      <v-flex xs10 md5>
        <v-card class="pa-3" outline max-width="800"  height="400px">
@@ -26,7 +34,7 @@
          <carlender/>
        </v-card>
      </v-flex>
-   </v-layout>
+   </v-layout> -->
    
 
  

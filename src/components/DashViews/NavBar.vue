@@ -1,6 +1,6 @@
 <template>
     <nav>
-       <v-toolbar style=" background-color: #5e0c1d;" app fixed>
+       <v-toolbar style=" background-color: #5e0c1d;"  fixed>
            <v-avatar>
                 <img
                     src="@/assets/img/com.jpg"
@@ -64,7 +64,7 @@ export default {
                 { text:'Dashboard', route:'/dashboard'},
                 { text:'Complaints', route:'/projects'},
                 { text:'Registry',route:'/team'},
-                 { text:'Stores',route:'/store'},
+                 { text:'Declined',route:'/store'},
             ],
             projects:[
       

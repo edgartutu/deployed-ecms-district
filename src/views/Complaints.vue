@@ -39,14 +39,14 @@
    <v-container fluid>
      <v-layout row class="mb-2">
        <v-tooltip top>
-         <v-btn small flat class="primary" @click="sortBy('title')" slot="activator">
+         <v-btn small flat style="background-color:#ffbb00;" @click="sortBy('title')" slot="activator">
          <v-icon left small >folder</v-icon>
          <span class="caption text-lowercase">By Complaint</span>
         </v-btn>
         <span class="white--text">sort product by Complaint</span>
        </v-tooltip>
        <v-tooltip top>
-          <v-btn small flat class="primary" @click="sortBy('status')" slot="activator">
+          <v-btn small flat style="background-color:#ffbb00;" @click="sortBy('status')" slot="activator">
          <v-icon left small >person</v-icon>
           <span class="caption text-lowercase">By status</span>
         </v-btn>
@@ -148,9 +148,9 @@ export default{
 
     },
     getColor (status) {
-        if (status =="Resolved" ) return 'orange'
+        if (status =="Resolved" ) return '#004080'
         else if (status=="Declined") return 'red'
-        else if (status=="Unresolved") return 'purple'
+        else if (status=="Unresolved") return '#5e0c1d'
         else return 'green darken-2'
       }
         
@@ -188,6 +188,6 @@ export default{
   background:  tomato
 }
 .v-chip.Unresolved{
-  background:  purple
+  background:  #5e0c1d
 }
 </style>

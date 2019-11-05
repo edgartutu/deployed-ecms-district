@@ -1,6 +1,6 @@
 <template>
   <div class="small" >
-    <pie-chart :data="chartData" :options="chartOptions" width="100%" height="90px" ></pie-chart>
+    <pie-chart :data="chartData" :options="chartOptions" width="100%" height="120px" ></pie-chart>
     
   </div>
 </template>
@@ -35,7 +35,7 @@ export default {
         datasets: [
           {
             label: "Data One",
-            backgroundColor: ["#E65100", "#5e0c1d", "#0acfbe"],
+            backgroundColor: ["#004080", "#5e0c1d", "green"],
             data:this.stuff
           }
         ]

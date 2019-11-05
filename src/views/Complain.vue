@@ -64,17 +64,21 @@ export default{
         select:'',
         select2:'',
         complaints:'',
+        // district:'',
         rules: [v => v.length <= 500 || 'Max 500 characters'],
       items: [
-        'Item 1',
-        'Item 2',
-        'Item 3',
-        'Item 4',
+        'Registration/Update',
+        'Display/Register',
+        'Nomination',
+        'Campaigns',
+        'Polling Day',
+        'General Complaint'
       ],
       itemz:[
         'Staff',
         'Non Staff'
       ],
+       
        radios: 'radio-1',
       projects:[],
       dialog: false,

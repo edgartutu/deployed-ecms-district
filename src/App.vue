@@ -1,7 +1,7 @@
 <template>
     <v-app>
 	   <v-card class="#dee9ff" style="background-color:#dee9ff;margin-top:0px" width="100%" height="100%">
-      <v-content  class="mx-1 mb-1">
+      <v-content  >
 			  <router-view />  
       </v-content>
 	 </v-card>
