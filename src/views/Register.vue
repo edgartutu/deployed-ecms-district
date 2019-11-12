@@ -168,7 +168,10 @@
               </v-card-text>
               <v-card-actions>
                 <div class="flex-grow-1"></div>
-                <v-btn color="primary" @click="submit()">Register</v-btn>
+                <router-link to="/login">
+                     <v-btn color="primary" @click="submit()">Register</v-btn>
+                </router-link>
+               
               </v-card-actions>
             </v-card>
             </v-flex>
