@@ -90,6 +90,7 @@
                 dark
                 small
                 class="mx-2"
+                :disabled='isDisabled(project.status)'
               >
               <div class="mx-2">Reslove</div>
               </v-btn>
@@ -116,6 +117,7 @@ export default{
     return{
       
      e1: 0,
+     terms: false,
     // pagination: {
       
     // },
@@ -124,8 +126,6 @@ export default{
       dialog: false,
       token: localStorage.getItem('token'),
       district_no: localStorage.getItem('district'),
-      
-      
      
     }
    
@@ -133,7 +133,8 @@ export default{
    computed: {
     pages () {
       return this.pagination.rowsPerPage ? Math.ceil(this.items.length / this.pagination.rowsPerPage) : 0
-    }
+    },
+   
   },
   created(){
     axios.post('https://aaomach.pythonanywhere.com/getcomplaints',{'district_n0': this.district_no},
@@ -152,7 +153,12 @@ export default{
         else if (status=="Declined") return 'red'
         else if (status=="Unresolved") return '#5e0c1d'
         else return 'green darken-2'
-      }
+      },
+       isDisabled(status){
+      if(status=="Unresolved")
+      return !this.terms
+      else return this.terms
+    }
         
       },
    

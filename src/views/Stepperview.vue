@@ -124,9 +124,10 @@
           Back
         </v-btn>
         <v-btn
-          :disabled="clickable"
+          :disabled='isDisabled(userData.resolving)'
           color="green darken-4"
           @click="e1 = 3;submit()"
+          
         >
           Submit
         </v-btn>
@@ -210,6 +211,7 @@ import unresolve from '../components/DashViews/Unresolved.vue'
     },
     data () {
       return {
+        terms: false,
         e1: 0,
         post:"",
         nin:"",
@@ -232,14 +234,15 @@ import unresolve from '../components/DashViews/Unresolved.vue'
             this.userData = this.$route.params.userData;
         },
         computed: {
-  isDisabled() {
-    if (status =="Resolved" ){
-      return false;
-    }
-  }
+  
 },
 
     methods:{
+       isDisabled(resolving){
+      if(resolving)
+      return !this.terms
+      else return this.terms
+    },
       submit(){
         axios.post('https://aaomach.pythonanywhere.com/postcomplaints',{
           'status':'Resolved','complaints_refn0':this.userData.refnumber, 'admin_email':this.email,
