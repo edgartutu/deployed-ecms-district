@@ -83,9 +83,7 @@ export default {
           this.projects = response.data
            
         }
-      )
-  },
-   mounted(){
+      ),
        axios.post('https://aaomach.pythonanywhere.com/AdminDistrict',{"district_n0":this.district_no}).then(
         response =>{
           this.items = response.data
@@ -98,6 +96,7 @@ export default {
         }
       )
   },
+
   methods:{
         logout() {
 				this.$store.dispatch("logout").then(() => {
