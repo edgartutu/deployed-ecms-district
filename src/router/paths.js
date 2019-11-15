@@ -126,6 +126,17 @@ export default [
     },
     component: () => import(`@/views/Complain.vue`),
     
+  },
+  {
+    path: '/manager',
+    name: 'manager',
+    meta: {
+      
+   
+      requiresAuth: false
+    },
+    component: () => import(`@/views/Manager.vue`),
+    
   }
 
   

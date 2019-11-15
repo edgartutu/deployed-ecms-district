@@ -29,6 +29,9 @@
                     </v-list-tile>   
                     </v-list>
                 </v-menu>
+                 <v-btn  flat small  class=" mx-2 white--text" v-for="link in items" :key="link.district_n0" >
+                    <span>{{link.district_n0}}</span>
+                </v-btn>
                 <router-link v-ripple  to="/dashboard">
 					<v-icon class="mx-2" color="white">mdi-home</v-icon><br>
 				</router-link>
@@ -70,6 +73,7 @@ export default {
       
       ],
       district: localStorage.getItem('district'),
+        district_no: localStorage.getItem('district'),
       token: localStorage.getItem('token')
         }
     },
@@ -77,6 +81,19 @@ export default {
            axios.post('https://aaomach.pythonanywhere.com/Pendings',{'district_n0':this.district}).then(
         response =>{
           this.projects = response.data
+           
+        }
+      )
+  },
+   mounted(){
+       axios.post('https://aaomach.pythonanywhere.com/AdminDistrict',{"district_n0":this.district_no}).then(
+        response =>{
+          this.items = response.data
+        //   console.log(response)
+       
+         
+         
+            
            
         }
       )
