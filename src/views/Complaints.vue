@@ -149,10 +149,11 @@ export default{
 
     },
     getColor (status) {
-        if (status =="Resolved" ) return '#004080'
+        if (status =="Resolved" ) return 'green darken-2'
         else if (status=="Declined") return 'red'
         else if (status=="Unresolved") return '#5e0c1d'
-        else return 'green darken-2'
+        else return '#004080'
+        
       },
        isDisabled(status){
       if(status=="Unresolved")
@@ -185,10 +186,10 @@ export default{
   border-left: 4px solid purple
 }
 .v-chip.Pending{
-  background: green 
+  background: #004080
 }
 .v-chip.Resolved{
-  background:  #004080
+  background:  green
 }
 .v-chip.Declined{
   background:  tomato
