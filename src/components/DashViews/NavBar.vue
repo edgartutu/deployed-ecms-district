@@ -30,7 +30,7 @@
                     </v-list>
                 </v-menu>
                  <v-btn  flat small  class=" mx-2 white--text">
-                    <span>{{district_no}}</span>
+                    <span style="font-size: 20px;">{{district_no}}</span>
                 </v-btn>
                 <router-link v-ripple  to="/dashboard">
 					<v-icon class="mx-2" color="white">mdi-home</v-icon><br>
