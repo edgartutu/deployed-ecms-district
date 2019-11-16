@@ -29,8 +29,8 @@
                     </v-list-tile>   
                     </v-list>
                 </v-menu>
-                 <v-btn  flat small  class=" mx-2 white--text" v-for="link in items" :key="link.district_n0" >
-                    <span>{{link.district_n0}}</span>
+                 <v-btn  flat small  class=" mx-2 white--text">
+                    <span>{{district_no}}</span>
                 </v-btn>
                 <router-link v-ripple  to="/dashboard">
 					<v-icon class="mx-2" color="white">mdi-home</v-icon><br>
