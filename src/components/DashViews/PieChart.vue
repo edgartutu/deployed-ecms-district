@@ -1,6 +1,7 @@
 <template>
   <div class="small" >
     <pie-chart :data="chartData" :options="chartOptions" width="100%" height="120px" ></pie-chart>
+    <div style=" font-family: Avenir;color:#031273;">Resolved :({{stuff[0]}}) Unresolved :({{stuff[1]}}) Pending :({{stuff[2]}})</div>
     
   </div>
 </template>
