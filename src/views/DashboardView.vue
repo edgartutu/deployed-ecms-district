@@ -15,6 +15,7 @@
        <v-hover v-slot:default="{ hover }">
        <v-card :elevation="hover ? 12 : 2" max-height="500px" style="overflow-y: auto" class="pa-3" outline max-width="820"  height="500px"> 
          <!-- <div width="1000px"><bar/></div> -->
+          <div  style=" font-family: Avenir;color:#031273;font-size: 30px;">Summary of complaints </div>
          <carlender/>
        </v-card>
        </v-hover>
