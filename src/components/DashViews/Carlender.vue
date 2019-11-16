@@ -68,10 +68,10 @@ export default{
   border-left: 4px solid tomato;
 }
 .v-chip.Pending{
-  background: green;
+  background: #004080;
 }
 .v-chip.Resolved{
-  background:  #004080;
+  background: green;
 }
 .v-chip.Declined{
   background:  tomato;
