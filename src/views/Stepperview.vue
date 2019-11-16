@@ -161,6 +161,8 @@
                         <h4 class="red--text" style="font-weight:bold;">{{userData.refnumber}}</h4>
                         <h4 class="font-weight-bold">Complaint</h4>
                         <p>{{userData.complaint_detail}}</p>
+                        <h4 class="font-weight-bold" >District Resolution :</h4>
+                        <p>{{userData.distro}}</p>
                         <h4 class="font-weight-bold" >HeadQuater Resolution :</h4>
                         <p>{{userData.resolving}}</p>
                         <div class="left " >ReportDate:  {{userData.date}}  </div><br>
