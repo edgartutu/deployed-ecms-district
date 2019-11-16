@@ -134,7 +134,7 @@
         
         <v-btn class="right"
           color="primary"
-          @click="e1 = 3;submit()"
+          @click="e1 = 3"
           small
           tile 
           outlined
@@ -163,6 +163,7 @@
                         <p>{{userData.complaint_detail}}</p>
                         <h4 class="font-weight-bold" >District Resolution :</h4>
                         <p>{{userData.distro}}</p>
+                        <!-- {{userData}} -->
                         <h4 class="font-weight-bold" >HeadQuater Resolution :</h4>
                         <p>{{userData.resolving}}</p>
                         <div class="left " >ReportDate:  {{userData.date}}  </div><br>
