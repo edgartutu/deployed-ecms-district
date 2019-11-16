@@ -2,7 +2,7 @@
 <div class="dashboard">
     <navbar/>
     <v-layout wrap >
-    <h2 class="purple--text">Complaint Form</h2>
+    <h2 class="purple--text">Register Complaint</h2>
          <v-flex xs12 md12>
             <v-card  class="white "  >
               <v-container fluid >
@@ -10,7 +10,7 @@
                   <v-text-field v-model="district"   label="District code" required ></v-text-field>
               </v-flex> -->
                 <v-flex xs12 md6>
-                  <v-text-field v-model="town"  label="Town" required ></v-text-field>
+                  <v-text-field v-model="town"  label="Address(Town,Village,Parish)" required ></v-text-field>
               </v-flex>
               <v-flex xs12 md12>
                   <v-select
