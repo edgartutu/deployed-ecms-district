@@ -11,7 +11,7 @@
           v-on="on"
           class="center"
         >
-          Foward 
+          Foward To HeadQuaters
         </v-btn>
       </template>
 
@@ -34,7 +34,7 @@
             text
             @click="dialog = false; declined()"
             >
-            push upper
+            Foward
           </v-btn>
           </router-link>
           
