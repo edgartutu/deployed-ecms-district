@@ -86,20 +86,20 @@
           >
           <v-container>
               <v-layout row wrap>
-                  <v-flex xs12 md6>
+                  <!-- <v-flex xs12 md6>
                         <v-text-field :rules="nameRules"  label="Resolver Post" required v-model="post"></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 md6>
+                  </v-flex> -->
+                  <!-- <v-flex xs12 md6>
                         <v-text-field :rules="nameRules"  label="NiN Number" required v-model="nin"></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 md12>
+                  </v-flex> -->
+                  <!-- <v-flex xs12 md12>
                         <v-text-field :rules="nameRules"  label="Complaint Clasification" required v-model="classification"></v-text-field>
-                  </v-flex>
+                  </v-flex> -->
                   <v-flex xs12 md12>
                         <v-textarea :rules="nameRules" label="Complaint Resolution" required v-model="resolution"></v-textarea>
                   </v-flex>
                   <v-flex xs12 md12>
-                        <v-textarea :rules="nameRules" label="Resolution Details" required v-model="details"></v-textarea>
+                        <v-textarea :rules="nameRules" label="Remarks" required v-model="details"></v-textarea>
                   </v-flex>
                   <v-flex xs6 md6>
                          <v-col cols="12" sm="6">
@@ -216,9 +216,9 @@ import unresolve from '../components/DashViews/Unresolved.vue'
       return {
         terms: false,
         e1: 0,
-        post:"",
-        nin:"",
-        classification:"",
+        post:"None",
+        nin:"None",
+        classification:"None",
         resolution:"",
         details:"",
         signature:"",
