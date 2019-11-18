@@ -92,7 +92,9 @@
                 class="mx-2"
                 :disabled='isDisabled(project.status)'
               >
-              <div class="mx-2" :required="isresolved(project.status)">{{word}}</div>
+              <div v-if="project.status=='Resolved'" class="mx-2" >View</div>
+              <div v-else-if="project.status=='Pending'" class="mx-2" >Resolve</div>
+              
                 <!-- <div class="mx-2" >{{word}}</div> -->
               
               </v-btn>
@@ -123,7 +125,7 @@ export default{
     // pagination: {
       
     // },
-      word:'',
+
       projects:[],
       dialog: false,
       token: localStorage.getItem('token'),
@@ -136,6 +138,7 @@ export default{
     pages () {
       return this.pagination.rowsPerPage ? Math.ceil(this.items.length / this.pagination.rowsPerPage) : 0
     },
+    
     //  isresolved(status){
     //   if(status=="Resolved")
     //   return this.word="View"
@@ -179,17 +182,7 @@ export default{
       return !this.terms
       else return this.terms
     },
-     isresolved(status){
-      if(status=="Resolved"){
-          this.word="View"
-      }
      
-      else if(status=="Pending") {
-          this.word="Resolve"
-      }
-      
-    
-    }
         
       },
    
