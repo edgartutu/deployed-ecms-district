@@ -81,7 +81,7 @@
           </div>
          </v-flex>
          <v-flex xs2 sm4 md1>
-           <router-link @click.native="isDisabled(project.status)"  :to="{ name: 'Stepperview',
+           <router-link   :to="{ name: 'Stepperview',
             params: { userData:{resolving:project.headresolution,dt:project.date_submit,complaint:project.nature_complaint,refnumber:project.complaints_refn0,agentname:project.agent_name,
             date:project.date,phoneno:project.agent_phone,location:project.district,description:project.comments,time:project.date_submit,
             complaint_detail:project.complaint,levels:project.classify_complaint,post:project.agent_staff,picto:project.picture,distro:project.district_resolutions} } }" >
