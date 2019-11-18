@@ -10,6 +10,7 @@
           dark
           v-on="on"
           class="center"
+           :disabled='isDisabled(userData.resolving,userData.distro)'
         >
           Foward To HeadQuaters
         </v-btn>
@@ -33,6 +34,7 @@
             color="primary"
             text
             @click="dialog = false; declined()"
+            :disabled='isDisabled(userData.resolving,userData.distro)'
             >
             Foward
           </v-btn>
@@ -50,6 +52,7 @@ import axios from 'axios'
       return {
         dialog: false,
         userData: 0,
+        terms:false,
         comment:'',
         nameRules: [
         v => !!v || 'Input is required',
@@ -63,6 +66,11 @@ import axios from 'axios'
           this.userData = this.$route.params.userData;
         },
     methods:{
+        isDisabled(resolving,distro){
+      if(resolving || distro)
+      return !this.terms
+      else return this.terms
+    },
       declined(){
         //console.log(this.userData.refnumber)
         axios.post('https://aaomach.pythonanywhere.com/postcomplaints',{

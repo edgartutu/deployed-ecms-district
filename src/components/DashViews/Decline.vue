@@ -10,6 +10,7 @@
           dark
           v-on="on"
           class="left"
+          :disabled='isDisabled(userData.resolving,userData.distro)'
         >
           Decline
         </v-btn>
@@ -34,6 +35,7 @@
             color="primary"
             text
             @click="dialog = false; declined()"
+            :disabled='isDisabled(userData.resolving,userData.distro)'
             >
             Submit
           </v-btn>
@@ -52,6 +54,7 @@ import axios from 'axios'
       return {
         dialog: false,
         userData: 0,
+        terms:false,
         comments:"",
         admin_email:"",
         nameRules: [
@@ -66,6 +69,11 @@ import axios from 'axios'
           this.userData = this.$route.params.userData;
         },
     methods:{
+         isDisabled(resolving,distro){
+      if(resolving || distro)
+      return !this.terms
+      else return this.terms
+    },
       declined(){
         //console.log(this.userData.refnumber)
         axios.post('https://aaomach.pythonanywhere.com/postcomplaints',{

@@ -103,7 +103,7 @@
                   </v-flex>
                   <v-flex xs6 md6>
                          <v-col cols="12" sm="6">
-                            <v-text-field label="Signatue" single-line outlined :rules="nameRules" required v-model="signature"></v-text-field>
+                            <v-text-field label="Signatue(Your name)" single-line outlined :rules="nameRules" required v-model="signature"></v-text-field>
                         </v-col>
                   </v-flex>
                  
@@ -123,15 +123,16 @@
         >
           Back
         </v-btn>
-        <v-btn
-          :disabled='isDisabled(userData.resolving)'
+        <router-link to="/projects">
+             <v-btn
+          :disabled='isDisabled(userData.resolving,userData.distro)'
           color="green darken-4"
           @click="e1 = 3;submit()"
           
         >
           Submit
         </v-btn>
-        
+        </router-link>
         <v-btn class="right"
           color="primary"
           @click="e1 = 3"
@@ -170,7 +171,7 @@
                         <div class="left">ResolvedDate: {{userData.dt}}</div>
                         <div class="right">signature: ...........................................</div>
                         <br>
-                        <div class="right">Director Technical And Support Services</div>
+                        <div class="right">District Returning Officer</div>
                     </v-card>
             </v-flex>
           </v-layout>
@@ -241,8 +242,8 @@ import unresolve from '../components/DashViews/Unresolved.vue'
 },
 
     methods:{
-       isDisabled(resolving){
-      if(resolving)
+       isDisabled(resolving,distro){
+      if(resolving || distro)
       return !this.terms
       else return this.terms
     },

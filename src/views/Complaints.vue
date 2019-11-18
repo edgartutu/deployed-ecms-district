@@ -81,7 +81,7 @@
           </div>
          </v-flex>
          <v-flex xs2 sm4 md1>
-           <router-link   :to="{ name: 'Stepperview',
+           <router-link @click.native="isDisabled(project.status)"  :to="{ name: 'Stepperview',
             params: { userData:{resolving:project.headresolution,dt:project.date_submit,complaint:project.nature_complaint,refnumber:project.complaints_refn0,agentname:project.agent_name,
             date:project.date,phoneno:project.agent_phone,location:project.district,description:project.comments,time:project.date_submit,
             complaint_detail:project.complaint,levels:project.classify_complaint,post:project.agent_staff,picto:project.picture,distro:project.district_resolutions} } }" >
@@ -92,7 +92,7 @@
                 class="mx-2"
                 :disabled='isDisabled(project.status)'
               >
-              <div class="mx-2">Reslove</div>
+              <div class="mx-2" :required="isresolved(project.status)">{{word}}</div>
               </v-btn>
 				</router-link>
          </v-flex>
@@ -121,7 +121,7 @@ export default{
     // pagination: {
       
     // },
-    
+      word:'',
       projects:[],
       dialog: false,
       token: localStorage.getItem('token'),
@@ -134,6 +134,12 @@ export default{
     pages () {
       return this.pagination.rowsPerPage ? Math.ceil(this.items.length / this.pagination.rowsPerPage) : 0
     },
+     isresolved(status){
+      if(status=="Resolved")
+      return this.word="View"
+      else if (status=="Pending")
+      return this.word="Resolve"
+    }
    
   },
   created(){
@@ -141,6 +147,17 @@ export default{
     {headers:{'x-access-token':this.token}}
     ).then(
       response => {this.projects = response.data})
+  },
+  computed:{
+    update: function(event) {
+
+      value = event.target.value;
+
+      this.word = value;
+      // console.log(value)
+    }
+
+
   },
 
   methods: {
@@ -159,6 +176,11 @@ export default{
       if(status=="Unresolved")
       return !this.terms
       else return this.terms
+    },
+     isresolved(status){
+      if(status=="Resolved")
+      return this.word="View"
+      else return this.word="Resolve"
     }
         
       },
