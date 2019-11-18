@@ -86,9 +86,53 @@
           >
           <v-container>
               <v-layout row wrap>
-                  <!-- <v-flex xs12 md6>
-                        <v-text-field :rules="nameRules"  label="Resolver Post" required v-model="post"></v-text-field>
-                  </v-flex> -->
+                <v-spacer></v-spacer>
+                  <v-flex xs4 md4>
+                         <v-dialog
+                    v-model="dialog"
+                    width="500"
+                  >
+                    <template v-slot:activator="{ on }">
+                      <v-btn
+                        color="blue-grey darken-1"
+                        dark
+                        v-on="on"
+                        class="right"
+                        :disabled='isDisable(userData.resolving,userData.distro)'
+                        
+                      >
+                        Amend Resolution
+                      </v-btn>
+                    </template>
+
+                    <v-card>
+                      <v-card-text>
+                        <v-container>
+                            <v-layout row wrap>
+                                <v-flex xs12 md12>
+                                      <v-textarea :rules="nameRules" label="Description" v-model="classify" required ></v-textarea>
+                                </v-flex>
+                            </v-layout >
+                            </v-container>
+                      </v-card-text>
+                      <v-divider></v-divider>
+                      <v-card-actions>
+                        <div class="flex-grow-1"></div>
+                        <!-- <router-link to="/projects"> -->
+                          <v-btn
+                          color="primary"
+                          text
+                         @click="dialog = false;submis()"
+                         :disabled='isDisable(userData.resolving,userData.distro)'
+                          >
+                          Amend
+                        </v-btn>
+                        <!-- </router-link> -->
+                        
+                      </v-card-actions>
+                    </v-card>
+                  </v-dialog>
+                  </v-flex>
                   <!-- <v-flex xs12 md6>
                         <v-text-field :rules="nameRules"  label="NiN Number" required v-model="nin"></v-text-field>
                   </v-flex> -->
@@ -167,6 +211,11 @@
                         <!-- {{userData}} -->
                         <h4 class="font-weight-bold" >HeadQuater Resolution :</h4>
                         <p>{{userData.resolving}}</p>
+                         <h4 class="font-weight-bold" >Remarks:</h4>
+                        <p>{{userData.dis}}</p>
+                         <h4 class="font-weight-bold" >Amendment</h4>
+                        <p>{{userData.classify}}</p>
+                        
                         <div class="left " >ReportDate:  {{userData.date}}  </div><br>
                         <div class="left">ResolvedDate: {{userData.dt}}</div>
                         <div class="right">signature: ...........................................</div>
@@ -218,11 +267,13 @@ import unresolve from '../components/DashViews/Unresolved.vue'
         terms: false,
         e1: 0,
         post:"None",
+        dialog: false,
         nin:"None",
         classification:"None",
         resolution:"",
         details:"",
         signature:"",
+        classify:"",
         userData: 0,
         debug: false,
         nameRules: [
@@ -242,6 +293,14 @@ import unresolve from '../components/DashViews/Unresolved.vue'
 },
 
     methods:{
+         
+       isDisable(resolving,distro){
+      if(resolving &&!distro)
+      return !this.terms
+      else if (!resolving &&!distro)
+      return !this.terms
+      else return this.terms
+    },
        isDisabled(resolving,distro){
       if(resolving || distro)
       return !this.terms
@@ -253,6 +312,20 @@ import unresolve from '../components/DashViews/Unresolved.vue'
           'districtagent_idn0':this.nin,'districtagent_post':this.post,
           'district_resolutions':this.resolution,'classify_complaint':this.classification,
           'district_description':this.details
+          },
+          {
+            headers:{
+            'x-access-token':this.token
+            }
+        })
+          // console.log(this.userData.refnumber)
+      },
+       submis(){
+        axios.post('https://aaomach.pythonanywhere.com/AmendComplaints',{
+          'status':'Resolved','complaints_refn0':this.userData.refnumber, 'admin_email':this.email,
+          
+         'classify_complaint':this.classify,
+        
           },
           {
             headers:{

@@ -39,7 +39,7 @@
    <v-container fluid>
      <v-layout row class="mb-2">
        <v-tooltip top>
-         <v-btn small flat style="background-color:#ffbb00;" @click="sortBy('title')" slot="activator">
+         <v-btn small flat style="background-color:#ffbb00;" @click="sortBy('nature_complaint')" slot="activator">
          <v-icon left small >folder</v-icon>
          <span class="caption text-lowercase">By Complaint</span>
         </v-btn>
@@ -82,9 +82,9 @@
          </v-flex>
          <v-flex xs2 sm4 md1>
            <router-link   :to="{ name: 'Stepperview',
-            params: { userData:{resolving:project.headresolution,dt:project.date_submit,complaint:project.nature_complaint,refnumber:project.complaints_refn0,agentname:project.agent_name,
+            params: { userData:{classify:project.classify_complaint,resolving:project.headresolution,dt:project.date_submit,complaint:project.nature_complaint,refnumber:project.complaints_refn0,agentname:project.agent_name,
             date:project.date,phoneno:project.agent_phone,location:project.district,description:project.comments,time:project.date_submit,
-            complaint_detail:project.complaint,levels:project.classify_complaint,post:project.agent_staff,picto:project.picture,distro:project.district_resolutions} } }" >
+            complaint_detail:project.complaint,levels:project.classify_complaint,post:project.agent_staff,picto:project.picture,distro:project.district_resolutions,dis:project.district_description} } }" >
 				    <v-btn
                 :color="getColor(project.status)"
                 dark

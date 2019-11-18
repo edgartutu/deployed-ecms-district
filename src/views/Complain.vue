@@ -41,7 +41,7 @@
                   ></v-textarea>
               </v-flex>
             </v-container>
-            <router-link to="/team">
+            <router-link to="/projects">
                 <v-btn flat class="green" @click="submit()" >Submit</v-btn>
             </router-link>
             </v-card>
