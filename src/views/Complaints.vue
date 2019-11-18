@@ -92,7 +92,9 @@
                 class="mx-2"
                 :disabled='isDisabled(project.status)'
               >
-              <div class="mx-2" :required="isresolved(project.status)">{{word}}</div>
+              <!-- <div class="mx-2" :required="isresolved(project.status)">{{word}}</div> -->
+                <div class="mx-2" >{{word}}</div>
+              
               </v-btn>
 				</router-link>
          </v-flex>
@@ -121,7 +123,7 @@ export default{
     // pagination: {
       
     // },
-      word:'',
+      word:'resolve',
       projects:[],
       dialog: false,
       token: localStorage.getItem('token'),
@@ -134,12 +136,12 @@ export default{
     pages () {
       return this.pagination.rowsPerPage ? Math.ceil(this.items.length / this.pagination.rowsPerPage) : 0
     },
-     isresolved(status){
-      if(status=="Resolved")
-      return this.word="View"
-      else if (status=="Pending")
-      return this.word="Resolve"
-    }
+    //  isresolved(status){
+    //   if(status=="Resolved")
+    //   return this.word="View"
+    //   else if (status=="Pending")
+    //   return this.word="Resolve"
+    // }
    
   },
   created(){
@@ -148,17 +150,17 @@ export default{
     ).then(
       response => {this.projects = response.data})
   },
-  computed:{
-    update: function(event) {
+  // computed:{
+  //   update: function(event) {
 
-      value = event.target.value;
+  //     value = event.target.value;
 
-      this.word = value;
-      // console.log(value)
-    }
+  //     this.word = value;
+  //     // console.log(value)
+  //   }
 
 
-  },
+  // },
 
   methods: {
     sortBy(prop){
@@ -177,11 +179,11 @@ export default{
       return !this.terms
       else return this.terms
     },
-     isresolved(status){
-      if(status=="Resolved")
-      return this.word="View"
-      else return this.word="Resolve"
-    }
+    //  isresolved(status){
+    //   if(status=="Resolved")
+    //   return this.word="View"
+    //   else return this.word="Resolve"
+    // }
         
       },
    
