@@ -92,8 +92,8 @@
                 class="mx-2"
                 :disabled='isDisabled(project.status)'
               >
-              <!-- <div class="mx-2" :required="isresolved(project.status)">{{word}}</div> -->
-                <div class="mx-2" >{{word}}</div>
+              <div class="mx-2" :required="isresolved(project.status)">{{word}}</div>
+                <!-- <div class="mx-2" >{{word}}</div> -->
               
               </v-btn>
 				</router-link>
@@ -123,7 +123,7 @@ export default{
     // pagination: {
       
     // },
-      word:'resolve',
+      word:'',
       projects:[],
       dialog: false,
       token: localStorage.getItem('token'),
@@ -179,11 +179,17 @@ export default{
       return !this.terms
       else return this.terms
     },
-    //  isresolved(status){
-    //   if(status=="Resolved")
-    //   return this.word="View"
-    //   else return this.word="Resolve"
-    // }
+     isresolved(status){
+      if(status=="Resolved"){
+          this.word="View"
+      }
+     
+      else if(status=="Pending") {
+          this.word="Resolve"
+      }
+      
+    
+    }
         
       },
    
