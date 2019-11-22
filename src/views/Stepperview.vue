@@ -88,7 +88,7 @@
               <v-layout row wrap>
                 <v-spacer></v-spacer>
                   <v-flex xs4 md4>
-                         <v-dialog
+                         <!-- <v-dialog
                     v-model="dialog"
                     width="500"
                   >
@@ -118,7 +118,7 @@
                       <v-divider></v-divider>
                       <v-card-actions>
                         <div class="flex-grow-1"></div>
-                        <!-- <router-link to="/projects"> -->
+                        <router-link to="/projects">
                           <v-btn
                           color="primary"
                           text
@@ -127,11 +127,11 @@
                           >
                           Amend
                         </v-btn>
-                        <!-- </router-link> -->
+                        </router-link>
                         
                       </v-card-actions>
                     </v-card>
-                  </v-dialog>
+                  </v-dialog> -->
                   </v-flex>
                   <!-- <v-flex xs12 md6>
                         <v-text-field :rules="nameRules"  label="NiN Number" required v-model="nin"></v-text-field>
@@ -212,9 +212,9 @@
                         <h4 class="font-weight-bold" >HeadQuater Resolution :</h4>
                         <p>{{userData.resolving}}</p>
                          <h4 class="font-weight-bold" >Remarks:</h4>
-                        <p>{{userData.dis}}</p>
-                         <h4 class="font-weight-bold" >Amendment</h4>
-                        <p>{{userData.classify}}</p>
+                        <p>{{userData.dis}}</p> <p>{{userData.remaks}}</p>
+                         <!-- <h4 class="font-weight-bold" >Amendment</h4>
+                        <p>{{userData.classify}}</p> -->
                         
                         <div class="left " >ReportDate:  {{userData.date}}  </div><br>
                         <div class="left">ResolvedDate: {{userData.dt}}</div>

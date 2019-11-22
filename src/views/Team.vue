@@ -88,8 +88,8 @@
                                       <p>{{props.item.headresolution}}</p>
                                        <h4 class="font-weight-bold">Remarks</h4>
                                       <p>{{props.item.district_description}}</p>
-                                       <h4 class="font-weight-bold">Amendement</h4>
-                                      <p>{{props.item.classify_complaint}}</p>
+                                       <!-- <h4 class="font-weight-bold">Amendement</h4>
+                                      <p>{{props.item.classify_complaint}}</p> -->
                                       <div class="left font-weight-bold">Date Recieved :</div>
                                       <div class="left">{{props.item.date}}</div><br>
                                         <div class="left font-weight-bold">Date Resolved :</div>
